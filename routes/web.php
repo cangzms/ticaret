@@ -13,6 +13,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
+Route::get('/login', function () {
     return view('login');
+});
+
+Route::post("/login","\App\Http\Controllers\UserController@login")->name("login");
+
+Route::group(["middleware"=>["web"]],function(){
+
+    Route::get("/product","\App\Http\Controllers\ProductController@index")->name("product");
+
 });
