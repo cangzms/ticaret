@@ -4,10 +4,13 @@
     <div class="container custom-login">
         <div class="row">
             <div class="col-md-4">
-                <h3>LOGIN</h3>
-                <form action="{{route("login")}}" method="post">
+                <form action="{{route("add_user")}}" method="post">
                     @csrf
-
+                    <h3>REGISTER</h3>
+                    <div class="mb-3">
+                        <label for="exampleInputEmail1" class="form-label">Name</label>
+                        <input type="text" name="name" class="form-control"
+                    </div>
                     <div class="mb-3">
                         <label for="exampleInputEmail1" class="form-label">Email address</label>
                         <input type="email" name="email" class="form-control" id="exampleInputEmail1"
@@ -23,4 +26,4 @@
             </div>
         </div>
     </div>
-    @endsection
+@endsection
