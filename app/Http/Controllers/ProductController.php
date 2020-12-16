@@ -69,11 +69,20 @@ class ProductController extends Controller
     }
 
     public function remove($id){
-        Product::destroy($id);
-
+        Card::destroy($id);
         return redirect(route("card"));
 
 
+    }
+
+    public function payment(){
+        $userId=Session::get("login")["id"];
+        $payments=DB::table("card")
+            ->join("products","card.product_id","=","products.id")
+            ->where("card.user_id",$userId)
+            ->sum("products.price");
+
+        return view("payment",compact("payments"));
     }
 
 

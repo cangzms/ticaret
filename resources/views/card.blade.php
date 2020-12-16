@@ -21,6 +21,7 @@
                     <tbody>
 
                     <tr>
+
                     @foreach($baskets as $basket)
                     <tr>
                         <td class="col-sm-8 col-md-6">
@@ -32,7 +33,7 @@
                                 </div>
                             </div></td>
                         <td class="col-sm-1 col-md-1" style="text-align: center">
-                            <input type="email" class="form-control" id="exampleInputEmail1" value="3">
+                            <input type="number" class="form-control" id="exampleInputEmail1" value="1">
                         </td>
                         <td class="col-sm-1 col-md-1 text-center"><strong>${{$basket->price}}</strong></td>
                         <td class="col-sm-1 col-md-1">
@@ -47,7 +48,7 @@
                         <td>   </td>
                         <td>   </td>
                         <td><h3>Total</h3></td>
-                        <td class="text-right"><h3><strong>{{}}</strong></h3></td>
+                        <td class="text-right"><h3><strong>{{$baskets}}</strong></h3></td>
                     </tr>
                     <tr>
 
@@ -58,9 +59,9 @@
                                 <span class="glyphicon glyphicon-shopping-cart"></span> Continue Shopping
                             </button></td>
                         <td>
-                            <button type="button" class="btn btn-success">
+                            <a href="{{route("payment")}}"> <button type="button" class="btn btn-success">
                                 Checkout <span class="glyphicon glyphicon-play"></span>
-                            </button></td>
+                            </button></a></td>
                     </tr>
                     </tbody>
                 </table>

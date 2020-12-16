@@ -37,4 +37,6 @@ Route::get("search","\App\Http\Controllers\ProductController@search")->name("sea
 
 Route::post("card","\App\Http\Controllers\ProductController@card")->name("card");
 Route::get("card","\App\Http\Controllers\ProductController@basket")->name("basket");
-Route::post("remove/{id}","\App\Http\Controllers\ProductController@remove")->name("remove");
+Route::get("remove/{id}","\App\Http\Controllers\ProductController@remove")->name("remove");
+
+Route::get("payment","\App\Http\Controllers\ProductController@payment")->name("payment");
